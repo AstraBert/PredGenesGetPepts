@@ -1,25 +1,3 @@
-import os
-
-class FileSystem:
-    def __init__(self):
-        pass
-    def makedir_orchange(path):
-        """Returns the base directory, the base name (without extension) and the base directory of the base directory"""
-        try:
-            os.mkdir(path)
-            return path
-        except FileExistsError:
-            return path
-    def get_base_dir(path):
-        """Returns the base directory, the base name (without extension) and the base directory of the base directory"""
-        base, ext= os.path.splitext(path)
-        asedir = base.split("/")
-        b = "/"
-        basedir = b.join(asedir[:len(asedir)-1])
-        base_basedir = b.join(asedir[:len(asedir)-2])
-        basename = asedir[len(asedir)-1]
-        return basedir, basename, base_basedir
-
 class AugustusResultFile:
     def __init__(self, path):
         self.path=path
