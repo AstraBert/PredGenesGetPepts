@@ -1,6 +1,6 @@
 # Usage function
 usage() {
-    echo "Usage: genecaesar -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
+    echo "Usage: predgenpepts -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
 
     REQUIRED ARGUMENTS:
     -i, --infile: Provide the path to the original fasta file from which to start the phylogenetic analysis
@@ -117,7 +117,9 @@ usage() {
     Xipophorus_maculatus                     | Xipophorus maculatus
     yarrowia_lipolytica                      | Yarrowia lipolytica
     maize                                    | Zea mays
-    (maize5)                                 | Zea mays"
+    (maize5)                                 | Zea mays
+    
+    Input predgenpepts -h,--help to show this message"
     exit 1
 }
 
@@ -187,11 +189,11 @@ else
     no_ext="${flnm%.*}"
     fold_name=$(dirname "$infile")
     folder_name=$(realpath "$fold_name")
-    execpath=$(which gncsr)
+    execpath=$(which predgenpepts)
     realexec=$(realpath $execpath)
     execdir=$(dirname $realexec)
     mkdir -p ${folder_name}/genecaesar_results
-    augustus --species=$species --gff3=on $infile > ${folder_name}/genecaesar_results/${no_ext}.gff3
-    python3 ${execdir}/readaugustus.py -i ${folder_name}/genecaesar_results/${no_ext}.gff3 > ${folder_name}/genecaesar_results/${no_ext}_predtranscript.faa
-    blastp -query ${folder_name}/genecaesar_results/${no_ext}_predtranscript.faa -db $database -out ${folder_name}/genecaesar_results/${no_ext}_blast.txt -outfmt "6 qseqid sseqid slen qlen pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore" -max_target_seqs $num
+    augustus --species=$species --gff3=on $infile > ${folder_name}/predgenpepts_results/${no_ext}.gff3
+    python3 ${execdir}/readaugustus.py -i ${folder_name}/predgenpepts_results/${no_ext}.gff3 > ${folder_name}/predgenpepts_results/${no_ext}_predtranscript.faa
+    blastp -query ${folder_name}/predgenpepts_results/${no_ext}_predtranscript.faa -db $database -out ${folder_name}/predgenpepts_results/${no_ext}_blast.txt -outfmt "6 qseqid sseqid slen qlen pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore" -max_target_seqs $num
 fi
