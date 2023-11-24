@@ -191,7 +191,7 @@ else
     folder_name=$(realpath "$fold_name")
     execdir=$(dirname $0)
     mkdir -p ${folder_name}/genecaesar_results
-    augustus --species=$species --gff3=on $infile > ${folder_name}/predgenpepts_results/${no_ext}.gff3
-    python3 ${execdir}/readaugustus.py -i ${folder_name}/predgenpepts_results/${no_ext}.gff3 > ${folder_name}/predgenpepts_results/${no_ext}_predtranscript.faa
-    blastp -query ${folder_name}/predgenpepts_results/${no_ext}_predtranscript.faa -db $database -out ${folder_name}/predgenpepts_results/${no_ext}_blast.txt -outfmt "6 qseqid sseqid slen qlen pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore" -max_target_seqs $num
+    augustus --species=$species --gff3=on $infile > ${folder_name}/predgengetpepts_results/${no_ext}.gff3
+    python3 ${execdir}/readaugustus.py -i ${folder_name}/predgengetpepts_results/${no_ext}.gff3 > ${folder_name}/predgengetpepts_results/${no_ext}_predtranscript.faa
+    blastp -query ${folder_name}/predgengetpepts_results/${no_ext}_predtranscript.faa -db $database -out ${folder_name}/predgengetpepts_results/${no_ext}_blast.txt -outfmt "6 qseqid sseqid slen qlen pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore" -max_target_seqs $num
 fi
