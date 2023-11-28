@@ -4,7 +4,43 @@ PredGenesGetPepts is an easy-to-use, beginner-friendly pipeline to call genes fr
 ## General information and applicability
 PredGenesGetPepts was designed as a gene-calling and peptide identification tool: a fasta file containing the to-be-investigated genetic region(s), a protein database and a taxonomic unit (at least orientative) are thus needed for the analysis. 
 
-For the gene-calling portion, PredGenesGetPepts is based on Augustus (version 3.4.0): this comes with the advantages of its easy-to-read output and quickness, but puts also a limitation on the applicability of the pipeline. Up to the employed version, the species that can be gene-called are the following:
+For the gene-calling portion, PredGenesGetPepts is based on Augustus (version 3.4.0): this comes with the advantages of its easy-to-read output and quickness, but puts also a limitation on the applicability of the pipeline, as Augustus can identify genes from a limited number of species (see [Supported species](./README.md#"Supported Species")).
+
+Gene calling output is a gff3 file, which is placed within the same folder of the original fasta file, located in a specifically generated directory named `predgengetpepts_results`.
+After that, the python script `readaugustus.py` reads the gff3 output from Augustus and extract the protein sequence(s): after that, it prints them to a .faa file placed within the `predgengetpepts_results` folder.
+The last step involves BLASTing, which is performed against the user-specified database: it returns a txt file that encompasses results from BLAST in tabular format.
+
+## Installation
+
+
+## Options and testing
+You will have to use the following options to correctly exploit PredGenGetPepts:
+
+```bash
+Usage: pregegepep -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
+
+REQUIRED ARGUMENTS:
+-i, --infile: Provide the path to the original fasta file from which to start the phylogenetic analysis
+-db, --database: Provide the path to the database against with blastp will be conducted
+-s,--species: Provide the identifier of the (expected) species you are calling genes against (needed for Augustus)
+OPTIONAL ARGUMENTS:
+-max, --max_target_seqs: Provide the maximum number of hits you want blast to return (default is 100)
+
+Input pregegepep -h,--help to show this message
+```
+
+To test the program, execute the following code (that assumes you have already moved to the PredGenGetPepts directory):
+
+```bash
+cd ./test
+makblastdb -i ./proteins.faa -o ./proteinsDB -dbtype prot
+pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
+```
+
+You will get the same results you can find in `predgengetpepts_results_test` folder.
+
+## Supported species
+Up to the employed version of Augustus, there are 108 species that can be gene-called, which are the following:
 
 Identifier                               | Species
 -----------------------------------------|----------------------
@@ -117,6 +153,3 @@ Xipophorus_maculatus                     | Xipophorus maculatus
 yarrowia_lipolytica                      | Yarrowia lipolytica
 maize                                    | Zea mays
 (maize5)                                 | Zea mays
-
-Gene calling output is a gff3 file, which is placed within the same folder of the original fasta file, located in a specifically generated directory named `predgengetpepts_results`.
-
