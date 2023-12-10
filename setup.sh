@@ -55,15 +55,10 @@ mamba install \
 conda deactivate
 
 ## MAKE predgenesgetpepts.sh AN EXECUTABLE
-ln -s ${basedir}/predgenesgetpepts.sh pregegepep
+echo "alias pregegepep='bash ${basedir}/predgenesgetpepts.sh'">>~/.bash_aliases
 
 ## MAKE THE CHANGES EFFECTIVE
 
-source ~/.bashrc
+source ~/.bash_aliases
 
-## TEST INSTALLATION
-conda activate ${basedir}/environments/predgenesgetpepts
 
-bash pregegepep -h
-
-conda deactivate
