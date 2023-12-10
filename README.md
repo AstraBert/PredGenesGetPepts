@@ -179,7 +179,7 @@ The code is protected by the GNU v.3 license. As the license provider reports: "
 
 Please note that PredGenGetPepts is still experimental and may contain errors, may fail/take really long while performing large analyses with limited computational power (e.g. on a normal laptop) and may output not-100%-reliable results, so always check them and pull issues whenever you feel it to be the case, we'll be on your back as soon as possible to fix/implement/enhance whatever you suggest!
 
-If you are using altrevis for you project, please consider to cite the author of this code (Astra Bertelli) and this GitHub repository.
+If you are using PredGenGetPepts for you project, please consider to cite the author of this code (Astra Bertelli) and this GitHub repository.
 
 ## References
 **augustus**: Oliver Keller, Martin Kollmar, Mario Stanke, Stephan Waack (2011)
