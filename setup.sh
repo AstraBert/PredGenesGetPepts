@@ -55,7 +55,7 @@ mamba install \
 conda deactivate
 
 ## MAKE predgenesgetpepts.sh AN EXECUTABLE
-ln -s ${basedir}/c.sh pregegepep
+ln -s ${basedir}/predgenesgetpepts.sh pregegepep
 
 ## MAKE THE CHANGES EFFECTIVE
 
