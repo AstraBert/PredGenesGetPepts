@@ -48,7 +48,7 @@ To test the program, execute the following code (that assumes you have already m
 
 ```bash
 cd ./test
-makblastdb -i ./proteins.faa -o ./proteinsDB -dbtype prot
+makeblastdb -i ./proteins.faa -o ./proteinsDB -dbtype prot
 pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
 ```
 
