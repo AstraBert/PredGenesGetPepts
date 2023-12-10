@@ -41,7 +41,7 @@ REQUIRED ARGUMENTS:
 OPTIONAL ARGUMENTS:
 -max, --max_target_seqs: Provide the maximum number of hits you want blast to return (default is 100)
 
-Input pregegepep -h,--help to show this message
+Input bash pregegepep -h,--help to show this message
 ```
 
 To test the program, execute the following code (that assumes you have already moved to the PredGenGetPepts directory):
@@ -49,7 +49,7 @@ To test the program, execute the following code (that assumes you have already m
 ```bash
 cd ./test
 makeblastdb -i ./proteins.faa -o ./proteinsDB -dbtype prot
-pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
+bash pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
 ```
 
 You will get the same results you can find in `predgengetpepts_results_test` folder.
