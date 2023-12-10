@@ -49,7 +49,7 @@ To test the program, execute the following code (that assumes you have already m
 ```bash
 conda activate ./environments/predgenesgetpepts
 cd ./test
-makeblastdb -i ./proteins.faa -o ./proteinsDB -dbtype prot
+makeblastdb -in ./proteins.faa -out ./proteinsDB -dbtype prot
 conda deactivate
 bash pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
 ```
