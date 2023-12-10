@@ -64,6 +64,6 @@ source ~/.bashrc
 ## TEST INSTALLATION
 conda activate ${basedir}/environments/predgenesgetpepts
 
-pregegepep -h
+bash pregegepep -h
 
 conda deactivate
