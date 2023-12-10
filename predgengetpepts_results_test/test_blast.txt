@@ -1,0 +1,6 @@
+putative_transcript	Homo_sapiens	418	408	100.000	98	398	0	0	4	401	1	398	0.0	829
+putative_transcript	Pan_paniscus	421	408	99.252	98	401	3	0	1	401	1	401	0.0	827
+putative_transcript	Gorilla_gorilla	421	408	99.002	98	401	4	0	1	401	1	401	0.0	823
+putative_transcript	Lemur_catta	413	408	89.277	98	401	35	1	1	401	1	393	0.0	736
+putative_transcript	Danio_rerio	379	408	61.828	90	372	122	3	36	401	2	359	6.76e-170	470
+putative_transcript	Danio_rerio	379	408	41.667	90	12	7	0	391	402	4	15	7.1	16.9
