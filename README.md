@@ -26,13 +26,16 @@ cd PredGenesGetPepts
 bash setup.sh
 ```
 
-Everything should now be set up and ready to run!
+Everything should now be set up and ready to run, test the installation by executing:
+```bash
+pregegepep -h
+```
 
 ## Options and testing
 You will have to use the following options to correctly exploit PredGenGetPepts:
 
 ```bash
-Usage: bash pregegepep -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
+Usage: pregegepep -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
 
 REQUIRED ARGUMENTS:
 -i, --infile: Provide the path to the original fasta file from which to start the phylogenetic analysis
@@ -41,7 +44,7 @@ REQUIRED ARGUMENTS:
 OPTIONAL ARGUMENTS:
 -max, --max_target_seqs: Provide the maximum number of hits you want blast to return (default is 100)
 
-Input bash pregegepep -h,--help to show this message
+Input pregegepep -h,--help to show this message
 ```
 
 To test the program, execute the following code (that assumes you have already moved to the PredGenGetPepts directory):
@@ -51,7 +54,7 @@ conda activate ./environments/predgenesgetpepts
 cd ./test
 makeblastdb -in ./proteins.faa -out ./proteinsDB -dbtype prot
 conda deactivate
-bash pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
+pregegepep -i ./test.fasta -db ./proteinsDB -s human -max 5
 ```
 
 You will get the same results you can find in `predgengetpepts_results_test` folder.
