@@ -12,6 +12,21 @@ The last step involves BLASTing, which is performed against the user-specified d
 
 ## Installation
 
+The basic requirment for this installation is to have [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html) and [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) up and running on your Linux machine. If you don't match this pre-requisite, consider downloading them from the dedicated pages.
+
+To install PredGenesGetPepts, first of all run:
+```bash
+git init
+git clone https://github.com/AstraBert/PredGenesGetPepts
+```
+
+Secondly, run :
+```bash
+cd PredGenesGetPepts
+bash setup.sh
+```
+
+Everything should now be set up and ready to run!
 
 ## Options and testing
 You will have to use the following options to correctly exploit PredGenGetPepts:
