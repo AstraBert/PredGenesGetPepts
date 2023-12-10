@@ -4,7 +4,7 @@ PredGenesGetPepts is an easy-to-use, beginner-friendly pipeline to call genes fr
 ## General information and applicability
 PredGenesGetPepts was designed as a gene-calling and peptide identification tool: a fasta file containing the to-be-investigated genetic region(s), a protein database and a taxonomic unit (at least orientative) are thus needed for the analysis. 
 
-For the gene-calling portion, PredGenesGetPepts is based on Augustus (version 3.4.0): this comes with the advantages of its easy-to-read output and quickness, but puts also a limitation on the applicability of the pipeline, as Augustus can identify genes from a limited number of species (see [Supported species](./README.md#"Supported Species")).
+For the gene-calling portion, PredGenesGetPepts is based on Augustus (version 3.4.0): this comes with the advantages of its easy-to-read output and quickness, but puts also a limitation on the applicability of the pipeline, as Augustus can identify genes from a limited number of species (see **Supported species** for more).
 
 Gene calling output is a gff3 file, which is placed within the same folder of the original fasta file, located in a specifically generated directory named `predgengetpepts_results`.
 After that, the python script `readaugustus.py` reads the gff3 output from Augustus and extract the protein sequence(s): after that, it prints them to a .faa file placed within the `predgengetpepts_results` folder.
