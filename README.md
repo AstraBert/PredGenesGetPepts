@@ -173,3 +173,19 @@ Xipophorus_maculatus                     | Xipophorus maculatus
 yarrowia_lipolytica                      | Yarrowia lipolytica
 maize                                    | Zea mays
 (maize5)                                 | Zea mays
+
+## License and rights of usage
+The code is protected by the GNU v.3 license. As the license provider reports: "Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights".
+
+Please note that PredGenGetPepts is still experimental and may contain errors, may fail/take really long while performing large analyses with limited computational power (e.g. on a normal laptop) and may output not-100%-reliable results, so always check them and pull issues whenever you feel it to be the case, we'll be on your back as soon as possible to fix/implement/enhance whatever you suggest!
+
+If you are using altrevis for you project, please consider to cite the author of this code (Astra Bertelli) and this GitHub repository.
+
+## References
+**augustus**: Oliver Keller, Martin Kollmar, Mario Stanke, Stephan Waack (2011)
+A novel hybrid gene prediction method employing protein multiple sequence alignments
+Bioinformatics, doi: 10.1093/bioinformatics/btr010
+
+**blast**: Camacho, C., Coulouris, G., Avagyan, V., Ma, N., Papadopoulos, J., Bealer, K., & Madden, T. L. (2009). 
+BLAST+: architecture and applications. 
+BMC bioinformatics, 10, 421. https://doi.org/10.1186/1471-2105-10-421
