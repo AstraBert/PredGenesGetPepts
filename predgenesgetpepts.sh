@@ -123,6 +123,9 @@ usage() {
     exit 1
 }
 
+ConPath=$(which conda)
+tmp=${ConPath#* }
+Conda=${tmp%%/bin/co*}
 
 infile=""
 database=""
@@ -185,13 +188,17 @@ if [ ! -f "$infile" ]
 then
     echo "Provided path does not represent an existing file"
 else
+    source ${Conda}/etc/profile.d/conda.sh
+    conda activate ${execdir}/environments/predgenesgetpepts
     flnm=$(basename "$infile")
     no_ext="${flnm%.*}"
     fold_name=$(dirname "$infile")
     folder_name=$(realpath "$fold_name")
-    execdir=$(dirname $0)
+    wd=$(dirname $0)
+    execdir=$(realpath $wd)
     mkdir -p ${folder_name}/genecaesar_results
     augustus --species=$species --gff3=on $infile > ${folder_name}/predgengetpepts_results/${no_ext}.gff3
     python3 ${execdir}/readaugustus.py -i ${folder_name}/predgengetpepts_results/${no_ext}.gff3 > ${folder_name}/predgengetpepts_results/${no_ext}_predtranscript.faa
     blastp -query ${folder_name}/predgengetpepts_results/${no_ext}_predtranscript.faa -db $database -out ${folder_name}/predgengetpepts_results/${no_ext}_blast.txt -outfmt "6 qseqid sseqid slen qlen pident qcovs length mismatch gapopen qstart qend sstart send evalue bitscore" -max_target_seqs $num
+    conda deactivate
 fi
