@@ -23,8 +23,10 @@ ConPath=$(which conda)
 tmp=${ConPath#* }
 Conda=${tmp%%/bin/co*}
 
+## CREATE A NEW FOLDER WHERE TO STORE THE ENVIRONMENT
 mkdir -p $basedir/environments
 
+## CREATE A MAMBA/CONDA ENVIRONMENT
 mamba create \
   -p $basedir/environments/predgenesgetpepts  \
   -y \
@@ -32,7 +34,26 @@ mamba create \
   -c bioconda \
   python=3.10
 
+## ACTIVATE predgenesgetpepts ENVIRONMENT
+source ${Conda}/etc/profile.d/conda.sh
+conda activate \
+  ${basedir}/environments/predgenesgetpepts
 
-cp -n $basedir/readaugustus.py $basedir/environments/predgenesgetpepts 
-cp -n $basedir/predgenesgetpepts.sh $basedir/environments/predgenesgetpepts 
+## INSTALL augustus
+mamba install \
+   -c bioconda \
+   -y \
+   augustus
+
+## INSTALL blast
+mamba install \
+   -c bioconda \
+   -y \
+   blast
+
+## DEACTIVATE
+conda deactivate
+
+
+
 
