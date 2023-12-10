@@ -32,7 +32,7 @@ Everything should now be set up and ready to run!
 You will have to use the following options to correctly exploit PredGenGetPepts:
 
 ```bash
-Usage: pregegepep -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
+Usage: bash pregegepep -i,--infile INFILE -db, --database DATABASE -s,--species SPECIES
 
 REQUIRED ARGUMENTS:
 -i, --infile: Provide the path to the original fasta file from which to start the phylogenetic analysis
