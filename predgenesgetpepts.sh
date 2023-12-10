@@ -119,7 +119,7 @@ usage() {
     maize                                    | Zea mays
     (maize5)                                 | Zea mays
     
-    Input pregegepep -h,--help to show this message"
+    Input bash pregegepep -h,--help to show this message"
     exit 1
 }
 
