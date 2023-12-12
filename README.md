@@ -28,6 +28,22 @@ bash setup.sh
 
 Everything should now be set up and ready to run, test the installation by executing:
 ```bash
+source ~/.bash_aliases
+pregegepep -h
+```
+
+Alternatively, you can download the code from the Realeases page: 
+- Download the PredGenesGetPepts.tar.gz archive file
+- Move to the directory were you stored the downloaded file
+- Run:
+```bash
+tar -xzvf ./PredGenesGetPepts.tar.gz
+```
+- You will now have the complete directory; run:
+```bash
+cd PredGenesGetPepts
+bash setup.sh
+source ~/.bash_aliases
 pregegepep -h
 ```
 
